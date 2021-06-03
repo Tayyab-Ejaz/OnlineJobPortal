@@ -1,0 +1,11 @@
+﻿.bs-example {
+    margin: 20px;
+}
+
+.accordion .fa {
+    margin-right: 0.5rem;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    top: 2px;
+}

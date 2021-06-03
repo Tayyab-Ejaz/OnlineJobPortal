@@ -1,0 +1,171 @@
+﻿@page "/FAQ";
+@inject IJSRuntime js;
+<Navbar></Navbar>
+
+
+<div class="container">
+    <h1 class="text-center mt-5 font-weight-bolder display-4 primary-text-color">FAQ</h1>
+    <div class="row py-5 justify-content-center">
+        <div class="col-md-6">
+            <div class="text-center">
+                <img src="/Images/female-female-3_sign_left.gif" width="150" alt="">
+                <h3 class="font-weight-bolder my-3 primary-text-color">Employer</h3>
+            </div>
+
+
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link" data-toggle="collapse"
+                                    data-target="#collapseOne">
+                                <i class="fa fa-angle-right"></i> What is HTML?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>
+                                HTML stands for HyperText Markup Language. HTML is the standard markup language for
+                                describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">
+                                    Learn
+                                    more.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseTwo">
+                                <i class="fa fa-angle-right"></i> What is
+                                Bootstrap?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>
+                                Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and
+                                easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/"
+                                                                                                           target="_blank">Learn more.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseThree">
+                                <i class="fa fa-angle-right"></i> What is CSS?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>
+                                CSS stands for Cascading Style Sheet. CSS allows you to specify various style
+                                properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">
+                                    Learn
+                                    more.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <img src="/Images/female-female-3_sign_left.gif" width="150" alt="">
+                <h3 class="font-weight-bolder my-3 primary-text-color">Candidate</h3>
+            </div>
+
+            <div class="accordion" id="accordion2">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link" data-toggle="collapse"
+                                    data-target="#collapseOne">
+                                <i class="fa fa-angle-right"></i> What is HTML?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordion2">
+                        <div class="card-body">
+                            <p>
+                                HTML stands for HyperText Markup Language. HTML is the standard markup language for
+                                describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">
+                                    Learn
+                                    more.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseTwo">
+                                <i class="fa fa-angle-right"></i> What is
+                                Bootstrap?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                         data-parent="#accordion2">
+                        <div class="card-body">
+                            <p>
+                                Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and
+                                easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/"
+                                                                                                           target="_blank">Learn more.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button type="button" class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseThree">
+                                <i class="fa fa-angle-right"></i> What is CSS?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                         data-parent="#accordion2">
+                        <div class="card-body">
+                            <p>
+                                CSS stands for Cascading Style Sheet. CSS allows you to specify various style
+                                properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">
+                                    Learn
+                                    more.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<Footer></Footer>
+
+
+@code { 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await js.InvokeVoidAsync("AssignFunctionality"); //Equivalent to ready(). Just making the ready function of jquery 
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

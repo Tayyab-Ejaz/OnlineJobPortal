@@ -1,0 +1,109 @@
+﻿.first {
+    background-image: linear-gradient(-63deg, #008fdc 0%, #0f4e9c 100%);
+}
+
+    .first h4 {
+        font-size: 30px;
+        color: white;
+    }
+
+    .first p {
+        line-height: 1.6;
+        color: white;
+        text-align: justify;
+    }
+
+.button-div {
+    background-color: #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-div {
+    padding-top: 110px;
+    padding-bottom: 80px;
+}
+
+.py-80 {
+    padding: 80px 0 !important;
+}
+
+.blue-banner {
+    background-color: #008fdc;
+    height: 350px;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.slogan-candidate {
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./Images/iStock-903585992.png);
+    width: 100%;
+    height: 100vh;
+}
+
+    .slogan-candidate .inner-slogan {
+        background-color: rgba(15, 78, 156, 0.6);
+        height: 350px;
+        width: 40%;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        margin-left: 10px;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+    }
+
+        .slogan-candidate .inner-slogan div {
+            font-size: 30px;
+        }
+
+.Justify-content-end {
+    justify-content: flex-end;
+}
+
+@media(min-width: 1800px) {
+    .lg-contain {
+        max-width: 1550px;
+    }
+}
+
+@media(max-width: 998px) {
+    .bg-blue {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .img-text {
+        height: auto;
+        width: 100%;
+    }
+
+    .slogan-candidate {
+        height: 400px;
+    }
+
+    .slogan1-candidate {
+        height: 300px;
+    }
+
+    .bg-blue {
+        padding: 0;
+    }
+
+    .news-letter {
+        height: 400px;
+        padding: 30px 0;
+    }
+}

@@ -1,0 +1,155 @@
+﻿@page "/AboutUs";
+
+<Navbar></Navbar>
+
+<div class="head">
+    <div class="container contain">
+        <button id="goTopButton" class="goToTopButton"><i class="fas fa-arrow-circle-up text-white"></i></button>
+        <div class="row">
+
+            <div class="row justify-content-center padding-bottom-150">
+                <div class="col-lg-10 w--100">
+                    <div class="row justify-content-around text-center">
+                        <div class="col-md-12 py-3 py-md-5 py-lg-5">
+                            <h4 class="font-weight-boldest font-size-30pt blue-text-dark text-uppercase padding-bottom-120">
+                                Meet our Team
+                            </h4>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3 col-12 mb-4">
+                            <div class="team-member">
+                                <div class="swi-overlay-container-aboutUs">
+                                    <img class="w-100" src="/Images/About_pic_1.png">
+                                    <div class="swi-overlay-aboutUs">
+                                        <div class="swi-overlay-text-aboutUs">Pat Thettick</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-2">Pat Thettick</h6>
+                            <p>CEO, Founder, Techniker</p>
+                        </div>
+
+
+                        <div class="col-md-6 col-lg-3 col-12 mb-4">
+                            <div class="team-member">
+                                <div class="swi-overlay-container-aboutUs">
+                                    <img class="w-100" src="/Images/About_pic_2.png"
+                                         style="border-radius: 100%;">
+                                    <div class="swi-overlay-aboutUs">
+                                        <div class="swi-overlay-text-aboutUs">Philip Hermann</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-2">Philip Hermann</h6>
+                            <p>Founder Sales, Charity</p>
+                        </div>
+                        <div class="col-md-6 col-lg-3 col-12 mb-4">
+                            <div class="team-member">
+                                <div class="swi-overlay-container-aboutUs">
+
+                                    <img class="w-100" src="/Images/About_pic_3.png">
+                                    <div class="swi-overlay-aboutUs">
+                                        <div class="swi-overlay-text-aboutUs">Rod Knee</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-2">Rod Knee</h6>
+                            <p>Techniker</p>
+                        </div>
+                        <div class="col-md-6 col-lg-3 col-12 mb-4">
+                            <div class="team-member">
+                                <div class="swi-overlay-container-aboutUs">
+
+                                    <img class="w-100" src="/Images/About_pic_4.png"
+                                         style="border-radius: 100%;">
+                                    <div class="swi-overlay-aboutUs">
+                                        <div class="swi-overlay-text-aboutUs">Martin Nicola</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="mb-2">Martin Nicola</h6>
+                            <p>Sales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mx-0 text-center">
+        <div class="col-md-6 col-12 py-3 px-0 first">
+            <div class="row pt-5 Justify-content-center">
+                <div class="col-md-12 col-lg-8">
+                    <h4 class="mb-md-5">Our inspiration</h4>
+                    <p class=" font-size-16pt">
+                        We want to provide an instrument where the focus is on people. The
+                        APP adapts to the most important link in the chain,
+                        people. Whether for candidates or for recruiters, simplicity should be a central point of
+                        any technical aid. In today's
+                        world, both in business and in everyday life, too many complex processes are necessary.
+                    </p>
+                    <p class="py-2 py-lg-5 font-size-16pt">
+                        The SWI APP is breathed into life. We rely on artificial intelligence so that the software
+                        learns continuously. Getting
+                        to your dream job in a short, clear and fast manner, that consideration here.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6 col-12 col-xl-6 px-0">
+            <div class="row justify-content-center button-div mx-0">
+                <div class="row Justify-content-center pt-3 pt-lg-5">
+                    <div class="col-md-10 mb-3 col-lg-6 bg-white">
+                        <div class="bg-white">
+                            <img class="w-100" src="/Images/pimp_your_braim.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <h5 class="py-5">Sign Up Today</h5>
+                </div>
+                <div class="col-5 col-xl-3">
+                    <a [routerLink]="'/users/register'" class="btn btn-default d-block"
+                       href="javascript:void(0)"><span>SIGN UP</span></a>
+                </div>
+                <div class="col-5 col-xl-3">
+                    <a [routerLink]="'/users/login'" class="btn btn-default d-block"
+                       href="javascript:void(0)"><span>LOGIN</span></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="blue-banner text-white d-flex flex-column justify-content-center ">
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row justify-content-around text-center  py-md-3 py-lg-5 py-80">
+                        <div class="col-md-3  my-4 mb-md-0">
+                            <h4 class="mb-2 font-weight-normal">21568</h4>
+                            <h4 class="font-weight-light mb-0">Jobs Posted</h4>
+                        </div>
+                        <div class="col-md-3  my-4 mb-md-0">
+                            <h4 class="mb-2 font-weight-normal">10214</h4>
+                            <h4 class="font-weight-light mb-0">Companies</h4>
+                        </div>
+                        <div class="col-md-3  my-4 mb-md-0">
+                            <h4 class="mb-2 font-weight-normal">3502</h4>
+                            <h4 class="font-weight-light mb-0">Employee</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<Footer></Footer>
+
+@code {
+
+}
