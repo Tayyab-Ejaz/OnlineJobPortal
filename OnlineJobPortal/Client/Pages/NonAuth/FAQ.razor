@@ -1,8 +1,10 @@
-﻿@page "/FAQ";
+﻿@page "/FAQ"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using OnlineJobPortal.Shared
+@attribute [Authorize(Roles="Employer")]
 @inject IJSRuntime js;
 <Navbar></Navbar>
-
-
 <div class="container">
     <h1 class="text-center mt-5 font-weight-bolder display-4 primary-text-color">FAQ</h1>
     <div class="row py-5 justify-content-center">
@@ -157,6 +159,7 @@
         </div>
     </div>
 </div>
+
 
 <Footer></Footer>
 
