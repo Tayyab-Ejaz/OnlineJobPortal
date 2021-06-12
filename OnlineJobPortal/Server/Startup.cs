@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineJobPortal.Server.Data;
 using OnlineJobPortal.Server.Models;
+using OnlineJobPortal.Shared;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace OnlineJobPortal.Server
     {
         private void CreateUser(IServiceProvider serviceProvider)
         {
+          
             var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
             string email = "waqar@gmail.com";
             string securePassword = "Pa$$w0rd!";
@@ -55,6 +57,9 @@ namespace OnlineJobPortal.Server
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<OnlineJobPortalContext>(options =>
+               options.UseSqlServer(
+                   Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -80,7 +85,8 @@ namespace OnlineJobPortal.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-           
+            services.AddSingleton<GlobalVar>();
+
 
         }
 
@@ -117,6 +123,7 @@ namespace OnlineJobPortal.Server
                 endpoints.MapFallbackToFile("index.html");
             });
             CreateUser(sp);
+
         }
     }
 }

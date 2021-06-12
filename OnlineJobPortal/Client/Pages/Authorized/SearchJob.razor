@@ -1,0 +1,94 @@
+﻿@page "/SearchJob"
+
+<Navbar></Navbar>
+
+<div class="row height-100vh">
+
+    <CandidateDashboard></CandidateDashboard>
+
+    <div class="col-md-9 p-2">
+        <div class="search-job-section p-5">
+            <h1 class="text-center font-weight-bold mb-3">Search Jobs</h1>
+            <div class="row gx-0">
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="">Select Category</option>
+                            <option value="">Information Technology</option>
+                            <option value="">Agriculture, Food and Natural Resources</option>
+                            <option value="">Finance</option>
+                            <option value="">Government and Public Administration</option>
+                            <option value="">Health Science</option>
+                            <option value="">Human Services</option>
+                            <option value="">Law, Public Safety, Corrections and Security</option>
+                            <option value="">Transportation, Distribution and Logistics</option>
+                            <option value="">Science, Technology, Engineering and Mathematics</option>
+                            <option value="">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2 ">
+                    <input type="submit" class="btn btn-success w-100" value="Search">
+                </div>
+            </div>
+
+            <div class="jobs-list mt-4 p-5 border rounded  ">
+                <h1 class="text-center font-weight-bold">JOBS</h1>
+
+                <div class="job-item p-4 my-4 border rounded ">
+                    <div class="d-flex justify-content-between">
+                        <h4>React Developer</h4>
+                        <div>
+                            <button class="btn btn-danger mr-2">Apply Now</button>
+                            <button class="btn btn-info">View Detail</button>
+                        </div>
+                    </div>
+                    <div class="text-muted mb-3">
+                        <strong>
+                            Dany Technologies, Lahore, Pakistan
+                        </strong>
+                    </div>
+                    <p class="text-muted">
+                        As a React Native App Software Developer, you will develop applications that users
+                        use to connect and interact. Our products require processing vast amounts of information and
+                        interaction with our core systems.... (Showing fist 200 character)
+                    </p>
+                    <div class="d-flex flex-wrap text-muted">
+                        <div class="mr-4"><i class="far fa-calendar-alt"></i>&nbsp; June-05,2000</div>
+                        <div class="mr-4"><i class="fas fa-money-bill-wave"></i>&nbsp; 30,000</div>
+                        <div class="mr-3"> <i class="fas fa-map-marker-alt"></i>&nbsp; Johar Town Lahore, Pakistan</div>
+                    </div>
+                </div>
+
+                <div class="job-item p-4 my-4 border rounded ">
+                    <div class="d-flex justify-content-between">
+                        <h4>React Developer</h4>
+                        <div>
+                            <button class="btn btn-danger mr-2">Apply Now</button>
+                            <button class="btn btn-info">View Detail</button>
+                        </div>
+                    </div>
+                    <div class="text-muted mb-3">
+                        <strong>
+                            Dany Technologies, Lahore, Pakistan
+                        </strong>
+                    </div>
+                    <p class="text-muted">
+                        As a React Native App Software Developer, you will develop applications that users
+                        use to connect and interact. Our products require processing vast amounts of information and
+                        interaction with our core systems.... (Showing fist 200 character)
+                    </p>
+                    <div class="d-flex flex-wrap text-muted">
+                        <div class="mr-4"><i class="far fa-calendar-alt"></i>&nbsp; June-05,2000</div>
+                        <div class="mr-4"><i class="fas fa-money-bill-wave"></i>&nbsp; 30,000</div>
+                        <div class="mr-3"> <i class="fas fa-map-marker-alt"></i>&nbsp; Johar Town Lahore, Pakistan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

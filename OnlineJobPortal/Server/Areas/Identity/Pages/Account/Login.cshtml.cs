@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using OnlineJobPortal.Server.Models;
+using OnlineJobPortal.Shared;
 
 namespace OnlineJobPortal.Server.Areas.Identity.Pages.Account
 {
@@ -80,6 +81,7 @@ namespace OnlineJobPortal.Server.Areas.Identity.Pages.Account
         
             if (ModelState.IsValid)
             {
+                GlobalVar.emaill = Input.Email;
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);

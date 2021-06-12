@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobPortal.Server", "OnlineJobPortal\Server\OnlineJobPortal.Server.csproj", "{E86722C1-DD76-4E00-B038-CB2DE75895CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineJobPortal.Server", "OnlineJobPortal\Server\OnlineJobPortal.Server.csproj", "{E86722C1-DD76-4E00-B038-CB2DE75895CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobPortal.Client", "OnlineJobPortal\Client\OnlineJobPortal.Client.csproj", "{0F84A2FB-2192-4AC2-86C3-BE535ECC52E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineJobPortal.Client", "OnlineJobPortal\Client\OnlineJobPortal.Client.csproj", "{0F84A2FB-2192-4AC2-86C3-BE535ECC52E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineJobPortal.Shared", "OnlineJobPortal\Shared\OnlineJobPortal.Shared.csproj", "{EFDFECCA-7953-4D9B-A291-62C032A3A2BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineJobPortal.Shared", "OnlineJobPortal\Shared\OnlineJobPortal.Shared.csproj", "{EFDFECCA-7953-4D9B-A291-62C032A3A2BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

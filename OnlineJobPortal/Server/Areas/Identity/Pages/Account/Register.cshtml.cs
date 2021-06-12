@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using OnlineJobPortal.Server.Models;
+using OnlineJobPortal.Shared;
+
 
 namespace OnlineJobPortal.Server.Areas.Identity.Pages.Account
 {
@@ -62,9 +64,20 @@ namespace OnlineJobPortal.Server.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            [Required(ErrorMessage = "Select at least 1 type")]
             public string uType { get; set; }
-            }
+
+            [Required(ErrorMessage ="The Name is Required")]
+            [StringLength(100, ErrorMessage = "The Name is too Long.")]
+            [Display(Name ="First Name")]
+            public string FirstName { get; set; }
+
+            [StringLength(100, ErrorMessage = "The Name is too Long.")]
+            public string LastName { get; set; }
+
+            [Required]
+            public bool isChecked { get; set; } 
+            
+        }
 
         public async Task OnGetAsync(string returnUrl = null)
         {
@@ -82,6 +95,7 @@ namespace OnlineJobPortal.Server.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+
                     _logger.LogInformation("User created a new account with password.");
                    
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -98,11 +112,28 @@ namespace OnlineJobPortal.Server.Areas.Identity.Pages.Account
                     {
                         await _userManager.AddToRoleAsync(user, "Candidate");
                         await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("role", "Candidate"));
+                        var db = new OnlineJobPortalContext();
+                        Candidate c = new Candidate();
+                        c.Fname = Input.FirstName;
+                        c.Lname = Input.LastName;
+                        c.Email = Input.Email;
+                        GlobalVar.emaill = Input.Email;
+                        c.Password = Input.Password;
+                        db.Candidates.Add(c);
+                        await db.SaveChangesAsync();
                     }
                     if (Input.uType == "Employer")
                     {
                         await _userManager.AddToRoleAsync(user, "Employer");
                         await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("role", "Employer"));
+                        var db = new OnlineJobPortalContext();
+                        Employer e = new Employer();
+                        e.CompName = Input.FirstName;
+                        e.Email = Input.Email;
+                        e.Password = Input.Password;
+                        GlobalVar.emaill = Input.Email;
+                        db.Employers.Add(e);
+                        await db.SaveChangesAsync();
                     }
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)

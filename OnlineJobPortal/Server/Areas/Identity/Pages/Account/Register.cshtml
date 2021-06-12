@@ -1,73 +1,174 @@
 ﻿@page
 @model RegisterModel
-@{
-    ViewData["Title"] = "Register";
-}
 
-<h1>@ViewData["Title"]</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                    <input type="radio" asp-for="Input.uType" value="Candidate" /> Candidate <br/>
-                     <input type="radio" asp-for="Input.uType" value="Employer" /> Employer <br/>
-                     <span asp-validation-for="Input.uType" class="text-danger"></span>
-            </div>
-           
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to register.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+<div class="register register-with-news-feed">
+    <div class="row min-height-100vh bg-primary">
+        <div class="col-md-12 flex--justify-center p-4">
+            <div class="card width-650 shadow-lg pl-3 pr-3 mt-5 max-height-900 border-radius-15">
+                <div class="row justify-content-center mt-4" style="padding: 20px;">
+                    <div class="col-8 row blue-bg-dark border-radius-25" style="padding: 20px 20px 35px 20px;">
+                    <div class="col-sm-6 text-center text-white reg-buttons-container border-right-1-5 border-top-left-radius-15 border-bottom-left-radius-15">
+                        <div onclick="toggleRegForm()">
+                            <input autocomplete="off" class="btn-check" id="candidate-regForm-btn"
+                                   name="options" type="radio" checked>
+                            <label class="" for="candidate-regForm-btn">Candidate</label>
                         </div>
-                    </form>
-                }
-            }
-        </section>
+                    </div>
+                    <div class="col-sm-6 text-center blue-bg-dark text-white reg-buttons-container border-top-right-radius-15 border-bottom-right-radius-15">
+                        <div onclick="toggleRegForm()">
+                            <input autocomplete="off" class="btn-check" id="employer-regForm-btn" name="options"
+                                   type="radio">
+                            <label class="" for="employer-regForm-btn">Employer</label>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row justify-content-center">
+                    <label class="font-weight-bolder text-center font-size-22pt grey-text mt-4">
+                        Create Your
+                        Account
+                    </label>
+                </div>
+
+
+                <div class="card-body">
+                    <div class="col-md-12 mt-2">
+                        <div class="container no-margin--left no-padding--top">
+                            <!--Form Candidate-->
+                            <form class="row g-3 font-size-md" id="cand-reg-form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                <div class="col-md-12">
+                                    <select class="form-select bg-grey w-100 p-2 mb-3 border">
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Ms.">Ms.</option>
+                                        <option value="Miss">Miss</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.FirstName" placeholder="First Name" />
+                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.LastName" placeholder="Last Name" />
+                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.Email" placeholder="Email" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.Password" placeholder="Password" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.ConfirmPassword" placeholder="Confirm Password"/>
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input asp-for="Input.uType" value="Candidate" type="radio" checked> 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-check mt-2 mb-2">
+                                        <input type="checkbox" class="form-check-input" asp-for="Input.isChecked">
+                                        <label class="form-check-label cursor-pointer" asp-for="Input.isChecked">
+                                            By clicking sign up you agree to our
+                                            <span class="blue-text-light">Terms</span> and that you have read
+                                            our
+                                            <span class="blue-text-light">Data Policy</span> including our
+                                            <span class="blue-text-light">cookies use</span>
+                                        </label>
+                                        <span asp-validation-for="Input.isChecked" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 flex--justify-center mt-5">
+                                    <button class="btn btn-primary bg-login-primary font-size-md width-120"
+                                            type="submit">
+                                        Sign Up
+                                    </button>
+                                </div>
+                                <div class="text-center w-100">
+                                    <label class="mb-2 mt-4 text-center">
+                                        Already have an account?<span>
+                                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Login</a>
+                                        </span>
+                                    </label>
+                                </div>
+                            </form>
+
+                            <!--Form Employer-->
+                            <form class="row g-3 font-size-md" id="emp-reg-form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                                <div class="col-md-12 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.FirstName" placeholder="Company Name" />
+                                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-12 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.Email" placeholder="Email" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+
+
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.Password" placeholder="Password" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input class="form-control bg-grey" asp-for="Input.ConfirmPassword" placeholder="Confirm Password" />
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <input asp-for="Input.uType" value="Employer" type="radio" checked>
+                                </div>
+
+                                <div class="col-md-12 mb-3">
+                                    <div class="form-check mt-2 mb-2">
+                                        <input class="form-check-input" asp-for="Input.isChecked" type="checkbox">
+                                        <label class="form-check-label cursor-pointer" asp-for="Input.isChecked">
+                                            By clicking sign up you agree to our
+                                            <span class="blue-text-light ml-2">Terms</span>and that you have read
+                                            our
+                                            <span class="blue-text-light ml-2">Data Policy</span>including our
+                                            <span class="blue-text-light ml-2">cookies use</span>
+                                        </label>
+                                        <span asp-validation-for="Input.isChecked" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 flex--justify-center mt-2">
+                                    <button class="btn btn-primary bg-login-primary font-size-md width-120"
+                                            type="submit">
+                                        Sign Up
+                                    </button>
+                                </div>
+                                <div class="w-100 text-center">
+                                    <label class="mb-2 mt-4 text-center">
+                                        Already have an account?<span>
+                                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Login</a>
+                                        </span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="/Css/Signup.css">
+    <script src="/Javascript/signup.js"></script>
 }

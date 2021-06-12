@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using OnlineJobPortal.Shared;
 
 namespace OnlineJobPortal.Client
 {
@@ -26,7 +27,11 @@ namespace OnlineJobPortal.Client
 
             builder.Services.AddApiAuthorization();
 
+            builder.Services.AddSingleton<GlobalVar>();
+
             await builder.Build().RunAsync();
+
+
         }
     }
 }

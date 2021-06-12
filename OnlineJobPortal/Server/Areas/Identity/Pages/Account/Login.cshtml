@@ -1,85 +1,68 @@
 ﻿@page
 @model LoginModel
 
-@{
-    ViewData["Title"] = "Log in";
-}
-
-<h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe">
-                            <input asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
+<div class="login login-with-news-feed">
+    <div class="row min-height-100vh bg-primary">
+        <div class="col-md-12 flex--justify-center p-4">
+            <div class="card width-400 shadow-2xl pl-3 pr-3 mt-5 max-height-800px border-radius-15">
+                <div class="card-header bg-white no-border">
+                    <div class="col-md-12 flex--justify-center flex-wrap--wrap">
+                        <img class="img-fluid width-100-per height-100 object-fit--contain mt-3"
+                             src="/Images/Logo_SmartWork.png" />
+                        <label class="font-weight-bolder text-center font-size-xlg grey-text mt-3">Login</label>
                     </div>
                 </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Log in</button>
-                </div>
-                <div class="form-group">
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                    <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-                        <div>
-                            <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
-                            </p>
+                <div class="card-body">
+                    <div class="col-md-12 mt-2">
+                        <div class="container no-margin--left no-padding--top">
+                            <!--Form-->
+                            <form class="row g-3 font-size-md" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                <div class="col-md-12 my-3">
+                                    <input class="form-control bg-grey" asp-for="Input.Email" placeholder="Email" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12 my-3">
+                                    <input class="form-control bg-grey" asp-for="Input.Password" placeholder="Password" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <a id="forgot-password" asp-page="./ForgotPassword" style="float: right">
+                                        Forgot
+                                        Password?
+                                    </a>
+                                </div>
+                                <div class="col-md-12 mb-5">
+                                    <div class="form-check mb-2 checkbox">
+                                        <label class="form-check-label cursor-pointer" asp-for="Input.RememberMe">
+                                            <input asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 flex--justify-center">
+                                    <button class="btn btn-primary bg-login-primary font-size-md width-120"
+                                            type="submit">
+                                        Log In
+                                    </button>
+                                </div>
+                                <div class="w-100 text-center">
+                                    <label class="mb-2 mt-4 text-center">
+                                        Not a member yet?<span>
+                                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Click Here</a>
+                                        </span> to SignUp
+                                    </label>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                }
-            }
-        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="/Css/login.css">
 }

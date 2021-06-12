@@ -1,0 +1,97 @@
+﻿@page "/CandidateProfile"
+
+
+<Navbar></Navbar>
+
+<div class="row height-100vh">
+    <CandidateDashboard></CandidateDashboard>
+
+    <div class="col-md-9 p-2">
+        <div class="candidate-profile p-5">
+            <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div class="  ">
+                        <img src="/Images/About_pic_3.png" width="200" height="200" alt="" class="rounded-circle">
+                    </div>
+                    <div class="text-center">
+                        <input type="file" name="Image" id="" class="my-3 form-control-file form-control-sm">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row gx-0">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Fist Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               placeholder="Fist Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Surname</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               placeholder="Surname">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Street Address</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+            </div>
+
+            <div class="row gx-0">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">City</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Select City</option>
+                            <option>Lahore</option>
+                            <option>Islamabad</option>
+                            <option>Karachi</option>
+                            <option>Rawalpindi</option>
+                            <option>Multan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Province</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Select Province</option>
+                            <option>Punjab</option>
+                            <option>Sindh</option>
+                            <option>KPK</option>
+                            <option>Blochistan</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center my-4">
+                <input type="submit" class="btn btn-outline-success w-100 w-md-25 " value="Save Profile">
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+@code {
+    
+
+}
