@@ -24,7 +24,6 @@ namespace OnlineJobPortal.Server.Data
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "Candidate", NormalizedName = "Candidate", Id = Guid.NewGuid().ToString(), ConcurrencyStamp = Guid.NewGuid().ToString() });
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "Admin", NormalizedName = "ADMIN", Id = Guid.NewGuid().ToString(), ConcurrencyStamp = Guid.NewGuid().ToString() });
             builder.Entity<IdentityRole>().HasData(new IdentityRole { Name = "Employer", NormalizedName = "Employer", Id = Guid.NewGuid().ToString(), ConcurrencyStamp = Guid.NewGuid().ToString() });
-
         }
     }
 }

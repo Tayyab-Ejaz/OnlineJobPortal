@@ -64,7 +64,8 @@
 
 @code {
     private Employer[] employer;
-    [Parameter] public int EMPID{ get; set; }
+    [Parameter] 
+    public int EMPID{ get; set; }
     private async Task getID()
     {
         employer = await Http.GetFromJsonAsync<Employer[]>("/api/Employer");

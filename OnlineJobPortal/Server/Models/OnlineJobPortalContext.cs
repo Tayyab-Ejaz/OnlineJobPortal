@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using OnlineJobPortal.Shared;
@@ -15,8 +16,7 @@ namespace OnlineJobPortal.Server.Models
 
         public OnlineJobPortalContext(DbContextOptions<OnlineJobPortalContext> options)
             : base(options)
-        {
-        }
+        {}
 
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
@@ -36,7 +36,6 @@ namespace OnlineJobPortal.Server.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=OnlineJobPortal;Integrated Security=True;");
             }
         }
@@ -286,8 +285,6 @@ namespace OnlineJobPortal.Server.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-  
-
     }
    
 }
